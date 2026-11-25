@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVIJO TASK PRO - Developer Configuration Guide</title>
+    <link rel="stylesheet" href="pro-4k-styles.css">
+    <style>
+        body {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .config-guide {
+            background: var(--panel-gradient);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 32px;
+            line-height: 1.8;
+        }
+        .config-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .config-section:last-child {
+            border-bottom: none;
+        }
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--acc-primary);
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #a3e635;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .variable-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .variable-table th,
+        .variable-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .variable-table th {
+            background: rgba(99, 102, 241, 0.1);
+            font-weight: 700;
+            color: var(--acc-primary);
+        }
+        .variable-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .config-var {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+            color: rgba(255, 200, 200, 0.9);
+        }
+        .success-box {
+            background: rgba(34, 197, 94, 0.1);
+            border-left: 4px solid #22c55e;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+            color: rgba(200, 255, 200, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="config-guide">
+        <h1>⚙️ Developer Configuration Guide</h1>
+        <p style="color: rgba(255, 255, 255, 0.7); font-size: 18px;">Advanced configuration for AVIJO TASK PRO features</p>
+
+        <div class="config-section">
+            <h2>🎨 CSS Variables Configuration</h2>
+            <p>Customize the entire design system by modifying CSS variables in <code>pro-4k-styles.css</code>:</p>
+            
+            <h3>Color Variables</h3>
+            <table class="variable-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Default Value</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="config-var">--acc-primary</span></td>
+                        <td>#6366f1</td>
+                        <td>Primary accent color (buttons, links)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="config-var">--acc-secondary</span></td>
+                        <td>#8b5cf6</td>
+                        <td>Secondary accent (gradients)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="config-var">--acc-tertiary</span></td>
+                        <td>#12a98c</td>
+                        <td>Tertiary accent (highlights)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="config-var">--glass-bg</span></td>
+                        <td>rgba(26, 24, 53, 0.4)</td>
+                        <td>Glass-morphism background</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Shadow Variables</h3>
+            <table class="variable-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Default Value</th>
+                        <th>Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="config-var">--shadow-sm</span></td>
+                        <td>0 2px 8px rgba(0, 0, 0, 0.12)</td>
+                        <td>Small subtle shadows</td>
+                    </tr>
+                    <tr>
+                        <td><span class="config-var">--shadow-md</span></td>
+                        <td>0 8px 24px rgba(0, 0, 0, 0.16)</td>
+                        <td>Medium card shadows</td>
+                    </tr>
+                    <tr>
+                        <td><span class="config-var">--shadow-lg</span></td>
+                        <td>0 16px 48px rgba(0, 0, 0, 0.20)</td>
+                        <td>Large modal shadows</td>
+                    </tr>
+                    <tr>
+                        <td><span class="config-var">--shadow-xl</span></td>
+                        <td>0 24px 64px rgba(0, 0, 0, 0.24)</td>
+                        <td>Extra large element shadows</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Typography Variables</h3>
+            <table class="variable-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Default Value</th>
+                        <th>Breakpoint Behavior</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="config-var">--text-xs</span></td>
+                        <td>clamp(0.75rem, 1vw, 0.875rem)</td>
+                        <td>Extra small responsive text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="config-var">--text-base</span></td>
+                        <td>clamp(1rem, 1.5vw, 1.125rem)</td>
+                        <td>Standard body text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="config-var">--text-2xl</span></td>
+                        <td>clamp(2rem, 3vw, 2.5rem)</td>
+                        <td>Large section headings</td>
+                    </tr>
+                    <tr>
+                        <td><span class="config-var">--text-4xl</span></td>
+                        <td>clamp(2.5rem, 5vw, 4rem)</td>
+                        <td>Extra large display text</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Customization Example</h3>
+            <div class="code-block">
+/* Override primary color */
+:root {
+  --acc-primary: #3b82f6; /* Change to blue */
+  --acc-secondary: #1d4ed8;
+}
+
+/* Override shadows for more subtle effect */
+:root {
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Increase all gaps */
+:root {
+  --gap-lg: 2rem; /* From 1.5rem */
+  --gap-xl: 3rem; /* From 2rem */
+}
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>🎮 Video Player Configuration</h2>
+            <p>Configure the video player in <code>pro-player.js</code>:</p>
+
+            <h3>Player Initialization</h3>
+            <div class="code-block">
+// Auto-initialized on page load
+// Access via: window.avijoPlayer
+
+const player = window.avijoPlayer;
+
+// Configuration
+player.playlist = ['video1.mp4', 'video2.mp4'];
+player.currentIndex = 0;
+player.playbackRate = 1;
+player.autoplay = false;
+            </div>
+
+            <h3>Player Methods</h3>
+            <table class="variable-table">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Parameters</th>
+                        <th>Returns</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>playNext()</code></td>
+                        <td>None</td>
+                        <td>void</td>
+                    </tr>
+                    <tr>
+                        <td><code>playPrevious()</code></td>
+                        <td>None</td>
+                        <td>void</td>
+                    </tr>
+                    <tr>
+                        <td><code>setPlaybackRate(rate)</code></td>
+                        <td>number (0.5-2)</td>
+                        <td>void</td>
+                    </tr>
+                    <tr>
+                        <td><code>setQuality(quality)</code></td>
+                        <td>string ('480p'-'4K')</td>
+                        <td>void</td>
+                    </tr>
+                    <tr>
+                        <td><code>seek(time)</code></td>
+                        <td>number (seconds)</td>
+                        <td>void</td>
+                    </tr>
+                    <tr>
+                        <td><code>setVolume(volume)</code></td>
+                        <td>number (0-1)</td>
+                        <td>void</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Player Usage Example</h3>
+            <div class="code-block">
+// Get player instance
+const player = window.avijoPlayer;
+
+// Add videos
+player.addToPlaylist('intro.mp4');
+player.addToPlaylist('content.mp4');
+player.addToPlaylist('outro.mp4');
+
+// Control playback
+player.playNext();
+player.seek(30); // Seek to 30 seconds
+player.setPlaybackRate(1.5); // 1.5x speed
+player.setVolume(0.7); // 70% volume
+
+// Get information
+console.log(player.getDuration()); // Video length
+console.log(player.getCurrentTime()); // Current position
+console.log(player.getPlaylist()); // All videos
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>⚙️ Settings Manager Configuration</h2>
+            <p>Configure user settings with <code>window.avijoSettings</code>:</p>
+
+            <h3>Settings Structure</h3>
+            <div class="code-block">
+{
+  theme: 'dark',              // 'dark', 'light', 'auto'
+  quality: 'auto',            // '480p', '720p', '1080p', '4K'
+  playbackRate: 1,            // 0.5 to 2
+  volume: 0.8,                // 0 to 1
+  autoplay: false,            // true/false
+  captions: false,            // true/false
+  pip: true,                  // Picture-in-Picture
+  keyboard: true,             // Keyboard shortcuts
+  notifications: true         // User notifications
+}
+            </div>
+
+            <h3>Settings Methods</h3>
+            <table class="variable-table">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Purpose</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>getSetting(key)</code></td>
+                        <td>Get individual setting</td>
+                        <td>getSetting('theme')</td>
+                    </tr>
+                    <tr>
+                        <td><code>setSetting(key, value)</code></td>
+                        <td>Set and persist setting</td>
+                        <td>setSetting('quality', '1080p')</td>
+                    </tr>
+                    <tr>
+                        <td><code>loadSettings()</code></td>
+                        <td>Load from localStorage</td>
+                        <td>loadSettings()</td>
+                    </tr>
+                    <tr>
+                        <td><code>saveSettings()</code></td>
+                        <td>Save to localStorage</td>
+                        <td>saveSettings()</td>
+                    </tr>
+                    <tr>
+                        <td><code>exportSettings()</code></td>
+                        <td>Export as JSON string</td>
+                        <td>const backup = exportSettings()</td>
+                    </tr>
+                    <tr>
+                        <td><code>importSettings(json)</code></td>
+                        <td>Import from JSON string</td>
+                        <td>importSettings(backup)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Settings Usage Example</h3>
+            <div class="code-block">
+const settings = window.avijoSettings;
+
+// Get setting
+const theme = settings.getSetting('theme');
+const quality = settings.getSetting('quality');
+
+// Set setting
+settings.setSetting('theme', 'light');
+settings.setSetting('quality', '1080p');
+settings.setSetting('playbackRate', 1.5);
+settings.setSetting('volume', 0.9);
+
+// Export user settings
+const backup = settings.exportSettings();
+localStorage.setItem('my_backup', backup);
+
+// Import user settings
+const imported = localStorage.getItem('my_backup');
+settings.importSettings(imported);
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>🌐 Compliance Document Configuration</h2>
+            <p>Customize compliance documents before publication:</p>
+
+            <h3>Required Replacements</h3>
+            <table class="variable-table">
+                <thead>
+                    <tr>
+                        <th>Placeholder</th>
+                        <th>Replace With</th>
+                        <th>Files Affected</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[Your Company Name]</td>
+                        <td>Your legal entity name</td>
+                        <td>All .html files</td>
+                    </tr>
+                    <tr>
+                        <td>[Your Company Address]</td>
+                        <td>Headquarters address</td>
+                        <td>All .html files</td>
+                    </tr>
+                    <tr>
+                        <td>[Your Jurisdiction]</td>
+                        <td>Governing law location</td>
+                        <td>terms-of-service.html</td>
+                    </tr>
+                    <tr>
+                        <td>[Launch Date]</td>
+                        <td>Your app launch date</td>
+                        <td>terms-of-service.html</td>
+                    </tr>
+                    <tr>
+                        <td>privacy@avojotask.com</td>
+                        <td>Your email</td>
+                        <td>All .html files</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Search & Replace Checklist</h3>
+            <div class="code-block">
+Search for these in all compliance .html files:
+
+[Your Company Name] → Your actual company name
+[Your Company Address] → Your office address
+[Your Jurisdiction] → Legal jurisdiction (e.g., "State of California")
+[Your Arbitration Rules] → Arbitration rules (e.g., "JAMS")
+[Arbitration Rules] → Rules for dispute resolution
+privacy@avojotask.com → your-email@yourcompany.com
+legal@avojotask.com → your-email@yourcompany.com
+accessibility@avojotask.com → your-email@yourcompany.com
+gdpr@avojotask.com → your-email@yourcompany.com
+dpo@avojotask.com → your-dpo@yourcompany.com
+www.avojotask.com → Your website URL
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Failing to customize these documents with your company information could result in app store rejection or legal issues. Take time to properly customize every document.
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>📱 Responsive Design Breakpoints</h2>
+            <p>Default breakpoints used in <code>pro-4k-styles.css</code>:</p>
+
+            <table class="variable-table">
+                <thead>
+                    <tr>
+                        <th>Breakpoint</th>
+                        <th>Width</th>
+                        <th>Device Type</th>
+                        <th>Adjustments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mobile Small</td>
+                        <td>&lt; 480px</td>
+                        <td>Mobile phones</td>
+                        <td>Single column, large touch targets</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Large</td>
+                        <td>480px - 768px</td>
+                        <td>Large phones, small tablets</td>
+                        <td>Two columns, optimized spacing</td>
+                    </tr>
+                    <tr>
+                        <td>Tablet</td>
+                        <td>768px - 1024px</td>
+                        <td>Tablets</td>
+                        <td>Three columns, improved layout</td>
+                    </tr>
+                    <tr>
+                        <td>Desktop</td>
+                        <td>1024px - 1200px</td>
+                        <td>Laptops</td>
+                        <td>Optimized for keyboard/mouse</td>
+                    </tr>
+                    <tr>
+                        <td>Large Desktop</td>
+                        <td>&gt; 1200px</td>
+                        <td>Large monitors, 4K</td>
+                        <td>Maximum width constraints, 4K optimization</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Add Custom Breakpoint</h3>
+            <div class="code-block">
+/* Add to pro-4k-styles.css */
+
+@media (max-width: 600px) {
+  /* Mobile optimization */
+  .player-container {
+    aspect-ratio: auto;
+    max-height: 50vh;
+  }
+}
+
+@media (min-width: 1600px) {
+  /* Large 4K displays */
+  :root {
+    --text-4xl: 4.5rem;
+  }
+}
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>🎙️ Keyboard Shortcuts Configuration</h2>
+            <p>Modify keyboard shortcuts in <code>pro-player.js</code>:</p>
+
+            <div class="code-block">
+Current default shortcuts:
+Space = Play/Pause
+→ = Seek forward 5 seconds
+← = Seek backward 5 seconds
+↑ = Increase volume
+↓ = Decrease volume
+F = Toggle fullscreen
+P = Toggle picture-in-picture
+M = Toggle mute
+
+To customize, edit handleKeyboard() method in pro-player.js:
+            </div>
+
+            <h3>Custom Shortcut Example</h3>
+            <div class="code-block">
+// Add custom shortcut for subtitles
+case 'c':
+  this.toggleCaptions();
+  break;
+
+// Add custom shortcut for settings
+case 's':
+  this.openSettings();
+  break;
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>🔒 Security Configuration</h2>
+            
+            <h3>Content Security Policy (CSP)</h3>
+            <p>Add this meta tag to your <code>index.html</code> for security:</p>
+            <div class="code-block">
+&lt;meta http-equiv="Content-Security-Policy" 
+  content="default-src 'self'; 
+           script-src 'self' 'unsafe-inline'; 
+           style-src 'self' 'unsafe-inline' 
+           https://fonts.googleapis.com; 
+           font-src 'self' 
+           https://fonts.gstatic.com; 
+           img-src 'self' data:; 
+           connect-src 'self' https://api.dictionaryapi.dev"&gt;
+            </div>
+
+            <h3>X-Frame-Options</h3>
+            <div class="code-block">
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+&lt;meta http-equiv="X-Frame-Options" content="SAMEORIGIN"&gt;
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>🌍 Internationalization (i18n) Setup</h2>
+            <p>Preparing for multi-language support:</p>
+
+            <h3>Translation Structure</h3>
+            <div class="code-block">
+// Create this structure for translations
+locales/
+├── en.json (English)
+├── es.json (Spanish)
+├── fr.json (French)
+├── de.json (German)
+├── it.json (Italian)
+├── ja.json (Japanese)
+├── zh.json (Chinese)
+└── ar.json (Arabic)
+
+Example en.json:
+{
+  "settings": "Settings",
+  "theme": "Theme",
+  "language": "Language",
+  "privacy": "Privacy",
+  "about": "About"
+}
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>✅ Deployment Checklist</h2>
+            <ul style="font-size: 16px; line-height: 2;">
+                <li>✓ Customize all CSS variables for branding</li>
+                <li>✓ Update video player configuration</li>
+                <li>✓ Configure settings defaults</li>
+                <li>✓ Replace all placeholders in compliance docs</li>
+                <li>✓ Set correct email addresses and contacts</li>
+                <li>✓ Add security headers (CSP, X-Frame-Options)</li>
+                <li>✓ Test on all target devices</li>
+                <li>✓ Verify GDPR/CCPA compliance</li>
+                <li>✓ Run accessibility audit</li>
+                <li>✓ Performance test and optimize</li>
+                <li>✓ Set up error logging</li>
+                <li>✓ Configure analytics (privacy-respecting)</li>
+            </ul>
+        </div>
+
+        <div class="success-box">
+            <strong>✓ Configuration Complete!</strong><br>
+            Your AVIJO TASK PRO is now configured and ready for deployment. Make sure to test thoroughly before submitting to app stores.
+        </div>
+    </div>
+</body>
+</html>
